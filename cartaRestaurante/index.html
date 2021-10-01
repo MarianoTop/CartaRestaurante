@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+
+<head>
+  <title> Restaurante La Trufa Dorada </title>
+  <meta name="author" content="Prado Diessler Federico Werner Nahuel- Safe Facundo Nadir- Toppino Mariano Ariel">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="normalize.css">
+  <script src="javascript.js"></script>
+  <script src="https://kit.fontawesome.com/062f1576c6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <!--  El siguiente div es para hacer el blurreado-->
+  <div id="caja-blur"></div>
+
+
+  <header>
+    <div class="titulos">
+      <h1>La Trufa Dorada</h1>
+      <h3>Cocina gourmet para clientes sofisticados </h3>
+    </div>
+    <nav class="main-nav">
+      <li><a href="#carne">Carnes</a></li>
+      <li><a href="#pasta">Pastas</a></li>
+      <li><a href="#veggie">Veggie</a></li>
+      <li><a href="#pizza">Pizzas</a></li>
+      <li><a href="#minuta">Minutas</a></li>
+      <li><a href="#postre">Postres</a></li>
+      <li><a href="#bebida">Bebidas</a></li>
+      <li><a href="#" onclick="mostrarReserva()">Reservas</a></li>
+    </nav>
+  </header>
+
+  <div class="main">
+
+    <div id="contenedor-formulario">
+
+
+
+      <div id="elementos-formulario">
+        <button id="boton-cerrar" onclick="cerrarReserva()">X </button>
+        <form onsubmit="return validar(document.miFormulario.NumeroDeTelefono)" name="miFormulario" action="">
+        
+          <div>
+            
+            <h3 class="titulo-form"> Registrese para realizar su reserva </h3>
+
+          </div>
+          <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" class="verificable" placeholder="Ingrese su nombre" name="nombre" id="nombre">
+          </div>
+          <div>
+            <label for="apellido">Apellido: </label>
+            <input type="text" class="verificable" placeholder="Ingrese su apellido" name="apellido" id="apellido">
+          </div>
+
+          <div>
+            <input type="radio" id="masculino" name="genero" value="masculino" class="botonVerificable">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" class="botonVerificable" name="genero" value="femenino"  >
+            <label for="femenino">Femenino</label>
+            <input type="radio" class="botonVerificable" id="otro" name="genero" value="otro" >
+
+            <label for="otro">Otro</label>
+          </div>
+          <div>
+            <label for="mail">Mail: </label>
+            <input type="email" class="verificable" placeholder="Ingrese su mail" name="mail" id="mail">
+          </div>
+          <div>
+            <label for="password"> Ingrese su contraseña </label>
+            <input type="password" class="verificable" id="password" name="password">
+          </div>
+          <div>
+            <label for="telefono">Telefono: </label>
+            <input type="number" class="verificable" placeholder="Número de telefono" id="telefono" name="NumeroDeTelefono">
+          </div>
+          <div class="form-fecha">
+            <label for="fecha1"> Selecciona su fecha de nacimiento </label>
+            <input type="date"  id="fecha1" name="fechaYHora" min="1900-01-02">
+          </div>
+          <div>
+            <input type="checkbox" id="chequear" name="checkbox" value="acepto" >
+            <label for="chequear">Acepto cumplir los protocolos contra el Covid 19</label>
+          </div>
+          <div class="btn-container">
+            <input type="submit" id="boton-reserva" value="Registrarme">
+            <button id="boton-reserva">¿Ya estas registrado? </button>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+    <div class="menu">
+
+      <div id="carne" class="menu-comidas">
+        <h4> Carnes </h4>
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Carne 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $800 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Carne 2 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $650 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Carne 3 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Carne 4 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $150 </td>
+
+          </tr>
+
+
+
+        </table>
+
+      </div>
+
+      <div id="pasta" class="menu-comidas">
+        <h4> Pastas </h4>
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Pasta 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pasta 2 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $150 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pasta 3 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $250 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pasta 4 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $350 </td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+      <div id="veggie" class="menu-comidas">
+        <h4> Opcion Veggie </h4>
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Milanesa 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $800 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Milanesa 2 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $650 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pastel 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Wok <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $350 </td>
+
+          </tr>
+
+
+
+        </table>
+
+      </div>
+
+      <div id="pizza" class="menu-comidas">
+        <h4> Pizza </h4>
+
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Pizza 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $800 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pizza 2 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $650 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pizza 3 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Pizza 4 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $150 </td>
+
+          </tr>
+
+
+
+        </table>
+      </div>
+
+      <div id="minuta" class="menu-comidas">
+        <h4> Minutas </h4>
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Minuta 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $800 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Minuta 2 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $650 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Minuta 3 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Minuta 4 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $150 </td>
+
+          </tr>
+
+
+
+        </table>
+
+      </div>
+
+      <div id="postre" class="menu-comidas">
+        <h4> Postres </h4>
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Postre 1 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $800 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Postre 2 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $650 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Postre 3 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Postre 4 <h6>ingrediente 1, ingrediente 2, ingrediente 3, ingrediente 4, </h6>
+            </td>
+            <td> $150 </td>
+
+          </tr>
+
+
+
+        </table>
+
+      </div>
+
+      <div id="bebida" class="menu-comidas">
+        <h4> Bebidas </h4>
+
+        <table>
+          <tr>
+            <th> Producto </th>
+            <th> Precio </th>
+          </tr>
+          <tr>
+
+            <td> Bebida 1 <h6> 1 litro</h6>
+            </td>
+            <td> $800 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Bebida 2 <h6>500 ml, Manzana, Naranja, Pomelo </h6>
+            </td>
+            <td> $650 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Bebida 3 <h6>600 ml </h6>
+            </td>
+            <td> $200 </td>
+
+          </tr>
+
+          <tr>
+
+            <td> Bebida 4 <h6>1 litro. Stella, Quilmes </h6>
+            </td>
+            <td> $150 </td>
+
+          </tr>
+
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="flex-container">
+
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1641.8877957724637!2d-58.425532241923726!3d-34.609835687550884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1629766235432!5m2!1ses-419!2sar"
+        width="70%" height="50%" style="padding-top:5%;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <div>
+      <h3>
+        Contacto
+      </h3>
+      <h6>
+        (011) 111123445
+      </h6>
+      <h6>
+        (011) 111123445
+      </h6>
+      <h6>
+        xxxxxx@hotmail.com
+      </h6>
+      <h6>
+        xxxxxx@gmail.com
+      </h6>
+
+    </div>
+
+    <div>
+      <p> ¡Seguinos en nuestras redes sociales! </p>
+      <ul>
+        <li> <a href="https://www.facebook.com/%27%3E/"><i class="fab fa-facebook  fa-2x"> </i> </a> </li>
+        <li> <a href="https://www.instagram.com/%22%3E/"><i class="fab fa-instagram  fa-2x"> </i> </a> </li>
+        <li> <a href="https://twitter.com/%22%3E/"><i class="fab fa-twitter  fa-2x"> </i> </a> </li>
+        <li> <a href="https://www.youtube.com/%22%3E/"><i class="fab fa-youtube  fa-2x"> </i> </a> </li>
+      </ul>
+    </div>
+
+
+
+  </footer>
+
+
+</body>
